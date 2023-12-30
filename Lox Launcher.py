@@ -70,7 +70,8 @@ def menu():
           "2- Instalar Forge \n",
           "3- Ejecutar Minecraft \n", 
           "4- Acerca de \n", 
-          "5- Salir \n")
+          "5- Salir \n",
+          "\nRecuerda instalar JAVA antes 😁\n")
     
     formulario = input(f"{mine_user} selecciona una opción: ")
     if formulario == "1":
