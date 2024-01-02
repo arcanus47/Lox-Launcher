@@ -2,10 +2,13 @@ import minecraft_launcher_lib
 import subprocess
 import sys
 import os
+from pathlib import Path
 
-# Ruta de los archivos de Minecraft y del Launcher
-usuario_windows = os.environ["USERNAME"]
-minecraft_directorio = (f"C://Users//{usuario_windows}//AppData//Roaming//.lox_launcher")
+# Chequea si se esta ejecutando en Linux o Windows y obtiene la ruta estandar de los archivos de minecraft
+if os.name == "nt":
+    minecraft_directorio = str(os.getenv("APPDATA")+".lox_launcher")
+elif os.name == "posix":
+    minecraft_directorio = str(Path.home())+(".lox_launcher")
 
 # Instalación de Minecraft
 def install_minecraft():
@@ -67,7 +70,8 @@ def menu():
           "2- Instalar Forge \n",
           "3- Ejecutar Minecraft \n", 
           "4- Acerca de \n", 
-          "5- Salir \n")
+          "5- Salir \n",
+          "\nRecuerda instalar JAVA antes 😁\n")
     
     formulario = input(f"{mine_user} selecciona una opción: ")
     if formulario == "1":
@@ -83,7 +87,8 @@ def menu():
         print("Información: \n",
               "-NOMBRE: Lox Launcher \n",
               "-VERSIÓN: 1.0 \n",
-              "-CREADOR: Cheremi Checo Dominguez \n")
+              "-CREADOR: Cheremi Checo Dominguez \n",
+              "-Porteador a Linux: Anderson Guzman Abreu")
         print(input())
     
     if formulario == "5":
