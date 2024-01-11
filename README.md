@@ -8,3 +8,5 @@ Es un launcher gratuito para Minecraft también conocido como «launcher pirata�
  - [Python3](https://www.python.org/downloads/)
  - [Java](https://www.java.com/es/download/)
  - [Minecraft-Launcher-Lib](https://pypi.org/project/minecraft-launcher-lib/)
+
+
