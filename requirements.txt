@@ -1,2 +1,2 @@
-minecraft-launcher-lib
+minecraft_launcher_lib
 niutka
