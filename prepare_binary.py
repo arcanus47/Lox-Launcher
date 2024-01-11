@@ -25,7 +25,7 @@ def install_nuitka():
 
 def compilar_proyecto():
     # Compila el proyecto con Nuitka
-    compile_command = "python -m nuitka --follow-imports --onefile './Lox Launcher.py'"
+    compile_command = "python -m nuitka --include-package-data=minecraft_launcher_lib --follow-imports --onefile './Lox Launcher.py'"
     os.system(compile_command)
 
     print(f"Lox-Launcher compilado")
