@@ -8,7 +8,7 @@ from pathlib import Path
 if os.name == "nt":
     minecraft_directorio = str(os.getenv("APPDATA")+".lox_launcher")
 elif os.name == "posix":
-    minecraft_directorio = str(Path.home())+(".lox_launcher")
+    minecraft_directorio = str(Path.home())+("/.lox_launcher")
 
 # Instalación de Minecraft
 def install_minecraft():
