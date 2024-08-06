@@ -1,17 +1,17 @@
 import minecraft_launcher_lib
 import subprocess
-import sys
 import os
 import json
+
+""" 
 from pathlib import Path
 
-""" Ruta de los archivos de Minecraft linux
+# Ruta de los archivos de Minecraft linux
 if os.name == "nt":
     minecraft_directorio = str(os.getenv("APPDATA")+".lox_launcher")
 elif os.name == "posix":
     minecraft_directorio = str(Path.home())+("/.lox_launcher")
 """
-
 # Ruta de los archivos de Minecraft
 usuario_windows = os.environ["USERNAME"]
 minecraft_directorio = f"C:/Users/{usuario_windows}/AppData/Roaming/.lox_launcher"
@@ -64,11 +64,20 @@ def instalar_minecraft():
     print(f"Versión instalada: {minecraft_version}")
 
 # Función para instalar Forge
-def instalar_forge():
-    forge_version = input("Versión de Forge: ")
-    forge = minecraft_launcher_lib.forge.find_forge_version(forge_version)
-    minecraft_launcher_lib.forge.install_forge_version(forge, minecraft_directorio, callback=callback)
-    print(f"Versión instalada: {forge_version}")
+def instalar_forge(version):
+    try:
+        # Buscar la versión de Forge compatible
+        forge = minecraft_launcher_lib.forge.find_forge_version(version)
+        if forge is None:
+            print(f"No se encontró la versión de Forge {version}.")
+            return
+
+        # Instalar Forge
+        minecraft_launcher_lib.forge.install_forge_version(forge, minecraft_directorio, callback=callback)
+        print(f"Forge versión {version} instalado correctamente.")
+    
+    except Exception as e:
+        print(f"Error al instalar Forge: {e}")
 
 # Función para instalar Fabric
 def instalar_fabric():
@@ -141,7 +150,8 @@ while True:
         instalar_minecraft()
         
     elif opcion == "2":
-        instalar_forge()
+        version_forge = input("Versión de Forge: ")
+        instalar_forge(version_forge)
         
     elif opcion == "3":
         instalar_fabric()
