@@ -7,7 +7,7 @@ def abrir_ventana_acerca_de():
     ventana.title("Lox Launcher")
     ventana.geometry("661x386")
     ventana.resizable(False, False)
-    ventana.iconbitmap(r"assets/frame0/lox_launcher_icon.ico")
+    ventana.iconbitmap(r"lox_launcher_icon.ico")
     ventana.configure(bg = "#242424")
 
     # Centralizar ventana

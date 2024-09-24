@@ -226,7 +226,7 @@ def abrir_ventana_forge():
     ventana.title("Lox Launcher")
     ventana.geometry("368x245")
     ventana.resizable(False, False)
-    ventana.iconbitmap(r"assets/frame0/lox_launcher_icon.ico")
+    ventana.iconbitmap(r"lox_launcher_icon.ico")
     ventana.configure(bg="#242424")
 
     # Centralizar ventana
@@ -265,7 +265,7 @@ def abrir_ventana_fabric():
     ventana.title("Lox Launcher")
     ventana.geometry("368x245")
     ventana.resizable(False, False)
-    ventana.iconbitmap(r"assets/frame0/lox_launcher_icon.ico")
+    ventana.iconbitmap(r"lox_launcher_icon.ico")
     ventana.configure(bg="#242424")
 
     # Centralizar ventana
@@ -301,7 +301,7 @@ ventana = Tk()
 ventana.title("Lox Launcher")
 ventana.geometry("800x500")
 ventana.resizable(False, False)
-ventana.iconbitmap(r"assets/frame0/lox_launcher_icon.ico")
+ventana.iconbitmap(r"lox_launcher_icon.ico")
 ventana.configure(bg="#242424")
 
 # Centralizar ventana
