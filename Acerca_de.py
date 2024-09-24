@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import Canvas
+import os
 
 #--------------------------------- CONFIGURACION DE LA VENTANA ----------------------------------
 def abrir_ventana_acerca_de():
@@ -7,7 +8,7 @@ def abrir_ventana_acerca_de():
     ventana.title("Lox Launcher")
     ventana.geometry("661x386")
     ventana.resizable(False, False)
-    ventana.iconbitmap(r"lox_launcher_icon.ico")
+    ventana.iconbitmap(os.path.join(os.path.dirname(__file__), 'lox_launcher_icon.ico'))
     ventana.configure(bg = "#242424")
 
     # Centralizar ventana

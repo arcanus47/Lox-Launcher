@@ -5,7 +5,7 @@ from tkinter import Tk, messagebox, Canvas, Entry, Button, PhotoImage
 from Acerca_de import abrir_ventana_acerca_de
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"assets\img")
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
@@ -187,7 +187,7 @@ def abrir_ventana_minecraft():
     ventana.title("Lox Launcher")
     ventana.geometry("368x245")
     ventana.resizable(False, False)
-    ventana.iconbitmap(r"lox_launcher_icon.ico")
+    ventana.iconbitmap(os.path.join(os.path.dirname(__file__), 'lox_launcher_icon.ico'))
     ventana.configure(bg="#242424")
 
     # Centralizar ventana
@@ -226,7 +226,7 @@ def abrir_ventana_forge():
     ventana.title("Lox Launcher")
     ventana.geometry("368x245")
     ventana.resizable(False, False)
-    ventana.iconbitmap(r"lox_launcher_icon.ico")
+    ventana.iconbitmap(os.path.join(os.path.dirname(__file__), 'lox_launcher_icon.ico'))
     ventana.configure(bg="#242424")
 
     # Centralizar ventana
@@ -265,7 +265,7 @@ def abrir_ventana_fabric():
     ventana.title("Lox Launcher")
     ventana.geometry("368x245")
     ventana.resizable(False, False)
-    ventana.iconbitmap(r"lox_launcher_icon.ico")
+    ventana.iconbitmap(os.path.join(os.path.dirname(__file__), 'lox_launcher_icon.ico'))
     ventana.configure(bg="#242424")
 
     # Centralizar ventana
@@ -301,7 +301,7 @@ ventana = Tk()
 ventana.title("Lox Launcher")
 ventana.geometry("800x500")
 ventana.resizable(False, False)
-ventana.iconbitmap(r"lox_launcher_icon.ico")
+ventana.iconbitmap(os.path.join(os.path.dirname(__file__), 'lox_launcher_icon.ico'))
 ventana.configure(bg="#242424")
 
 # Centralizar ventana
